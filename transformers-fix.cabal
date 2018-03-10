@@ -4,6 +4,8 @@ license:               BSD3
 author:                Amos Robinson
 maintainer:            Tim Humphries <tim@utf8.me>
 copyright:             (c) 2017 Ambiata.
+license:               BSD3
+license-file:          LICENSE
 category:              System
 cabal-version:         >= 1.8
 build-type:            Simple
