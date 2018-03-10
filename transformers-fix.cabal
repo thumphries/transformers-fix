@@ -14,6 +14,14 @@ synopsis:
 description:
   Monad transformer for evaluating to a fixpoint.
 
+tested-with:
+    GHC == 7.6.3
+  , GHC == 7.8.4
+  , GHC == 7.10.2
+  , GHC == 8.0.2
+  , GHC == 8.2.2
+  , GHC == 8.4.1
+
 homepage:              https://github.com/thumphries/transformers-fix
 bug-reports:           https://github.com/thumphries/transformers-fix/issues
 source-repository head
