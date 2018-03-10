@@ -22,7 +22,7 @@ module Control.Monad.Trans.Fix (
     , progress
     ) where
 
-import              Control.Monad.Trans.Class
+import              Control.Monad.Trans.Class (MonadTrans (..))
 
 -- | Fixpoint monad transformer.
 newtype FixT m a
