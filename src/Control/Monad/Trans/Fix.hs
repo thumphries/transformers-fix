@@ -13,6 +13,7 @@
 -- Then you can provide @fixpoint@ with a function of type @a -> FixT _ a@, which will be re-run
 -- until no progress is made.
 {-# LANGUAGE BangPatterns      #-}
+{-# LANGUAGE NoImplicitPrelude #-}
 module Control.Monad.Trans.Fix (
       FixT   (..)
     , Progress (..)
@@ -22,7 +23,19 @@ module Control.Monad.Trans.Fix (
     , progress
     ) where
 
+import              Control.Applicative (Applicative (..))
+import              Control.Monad (Monad (..))
 import              Control.Monad.Trans.Class (MonadTrans (..))
+
+import              Data.Eq (Eq (..))
+import              Data.Ord (Ord (..))
+import              Data.Functor (Functor (..))
+import              Data.Function ((.), ($))
+import              Data.Maybe (Maybe (..))
+
+import              Prelude (($!))
+
+import              Text.Show (Show (..))
 
 -- | Fixpoint monad transformer.
 newtype FixT m a
