@@ -9,6 +9,7 @@ category:              System
 cabal-version:         >= 1.10
 build-type:            Simple
 extra-source-files:    README.md
+                       CHANGELOG.md
 
 synopsis:
   Monad transformer for evaluating to a fixpoint
