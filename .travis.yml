@@ -107,12 +107,4 @@ script:
   - if $HADDOCK; then cabal new-haddock -w ${HC} ${TEST} ${BENCH} all; else echo "Skipping haddock generation";fi
 
 # REGENDATA ["transformers-fix.cabal"]
-
-deploy:
-  - provider: hackage
-    username: $HACKAGE_USERNAME
-    password: $HACKAGE_PASSWORD
-    on:
-      tags: true
-
 # EOF
