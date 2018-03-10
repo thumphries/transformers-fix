@@ -1,0 +1,25 @@
+name:                  transformers-fix
+version:               1.0
+license:               BSD3
+author:                Amos Robinson
+maintainer:            Tim Humphries <tim@utf8.me>
+copyright:             (c) 2017 Ambiata.
+synopsis:              Monad transformer for evaluating to a fixpoint
+category:              System
+cabal-version:         >= 1.8
+build-type:            Simple
+description:           Monad transformer for evaluating to a fixpoint.
+
+library
+  build-depends:
+                       base                            >= 3          && < 5
+                     , transformers                    >= 0.4        && < 0.8
+
+  ghc-options:
+                       -Wall
+
+  hs-source-dirs:
+                       src
+
+  exposed-modules:
+                       Control.Monad.Trans.Fix
