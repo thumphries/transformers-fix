@@ -4,6 +4,7 @@
 -- as you cannot necessarily just run some transform @f@ on @x@ until @f x == x@.
 --
 -- This might not be ideal for a few reasons:
+--
 -- * @x@ might not implement @Eq@;
 -- * @x@ might implement @Eq@, but could contain floats of @NaN@, in which case @NaN /= NaN@; or
 -- * checking equality can be expensive.
