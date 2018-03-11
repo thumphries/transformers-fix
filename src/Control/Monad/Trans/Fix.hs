@@ -1,18 +1,22 @@
--- | Monad transformer for evaluating to a fixpoint
+-- | Monad transformer for evaluating to a fixpoint.
+--
 -- The idea is that some transforms need to be run multiple times.
--- Deciding whether to run a transform again can be somewhat tedious though,
--- as you cannot necessarily just run some transform @f@ on @x@ until @f x == x@.
+-- Deciding whether to run a transform again can be somewhat tedious
+-- though, as you cannot necessarily just run some transform @f@ on
+-- @x@ until @f x == x@.
 --
 -- This might not be ideal for a few reasons:
 --
 -- * @x@ might not implement @Eq@;
--- * @x@ might implement @Eq@, but could contain floats of @NaN@, in which case @NaN /= NaN@; or
+-- * @x@ might implement @Eq@, but could contain floats of @NaN@, in
+--   which case @NaN /= NaN@; or
 -- * checking equality can be expensive.
 --
--- Instead, this provides a function called @progress@, with the same type as @return@,
--- that marks the current transform as having "made progress": that is, it should be re-run again.
--- Then you can provide @fixpoint@ with a function of type @a -> FixT _ a@, which will be re-run
--- until no progress is made.
+-- Instead, this provides a function called @progress@, with the same
+-- type as @return@, that marks the current transform as having "made
+-- progress": that is, it should be re-run again.  Then you can call
+-- @fixpoint@ with a function of type @a -> FixT m a@, which will be
+-- re-run until no progress is made.
 {-# LANGUAGE BangPatterns      #-}
 {-# LANGUAGE NoImplicitPrelude #-}
 module Control.Monad.Trans.Fix (
